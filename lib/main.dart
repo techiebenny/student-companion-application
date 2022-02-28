@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               title: 'Student App',
               theme: customTheme(),
-              home: HomeScreen(),
+              home: LoginScreen(),
             );
           }
         });
