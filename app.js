@@ -74,7 +74,10 @@ app.post('/login',async(request,response)=>{
     const db=db_service.getDbServiceInstance();
     const result=db.checkLogin(userid,password);
     result.then(data =>{
-        return response.json({ result: data })
+        if(data.length==1)
+            return response.json({ result: "success" })
+        else
+            return response.json({ result: "fail" })
     }
     )
     .catch(error=>console.log(error));
