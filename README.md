@@ -9,16 +9,20 @@ In case the pages are slow / buggy please try again as the service would've gone
 
 **Student UI Web page** [was originally meant for mobile only but has been ported to web for prototyping, still fixing bugs ]
 
+
+https://orange-bay-073982310.1.azurestaticapps.net
+
 ```
-> https://orange-bay-073982310.1.azurestaticapps.net 
 > Username : abcd@gmail.com
 > Password : password
 ```
 
 **College / Department pages**
-```
->https://agreeable-pond-059f0e210.1.azurestaticapps.net/#/
 
+https://agreeable-pond-059f0e210.1.azurestaticapps.net/#/
+
+
+```
 ~~~ College Login ~~~
 Username : rit@gmail.com
 Password : rit
@@ -28,9 +32,11 @@ Username :  iseadmin@gmail.com
 Password : password
 ```
 
-**Root Admin Pages**
+**Root Admin Page**
+
+https://proud-meadow-0f340e010.1.azurestaticapps.net/#/
+
 ```
-> https://proud-meadow-0f340e010.1.azurestaticapps.net/#/
 > Username : root@gmail.com
 > Password : root
 ```
@@ -152,7 +158,7 @@ Use express to run the code locally after making changes to the serve location (
 
 - Database 
     Download and Install [mysql] and load the database values from the dump file to have table structure ready
-    Use XAMPP to run the server or use MYSQL Workbench to import tables 
+    Use [xampp] to run the server or use MYSQL Workbench to import tables 
     Make note of the connection string and username/password combo you create to access the database in the application 
 
 Make sure to change the connection strings and other variables as necessary in the files to locally host the entire application independently.
@@ -163,3 +169,6 @@ Make sure to change the connection strings and other variables as necessary in t
    [flutter]: <https://docs.flutter.dev/get-started/install>
    [mysql]: <https://www.mysql.com/downloads/>
    [Express]: <https://expressjs.com/>
+   [xampp]: <https://www.apachefriends.org/index.html>
+   [https://orange-bay-073982310.1.azurestaticapps.net]: <https://orange-bay-073982310.1.azurestaticapps.net>
+   
