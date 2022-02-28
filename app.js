@@ -67,7 +67,7 @@ app.post('/delete',async(request,response)=>{
 });
 
 //login
-app.post('/login',async(request,response)=>{
+app.post('/root/login',async(request,response)=>{
     const {userid,password}=request.body;
     console.log(userid);
     console.log(password);
@@ -82,6 +82,20 @@ app.post('/login',async(request,response)=>{
     )
     .catch(error=>console.log(error));
 });
+
+app.post('/login',async(request,response)=>{
+    const {userid,password}=request.body;
+    console.log(userid);
+    console.log(password);
+    const db=db_service.getDbServiceInstance();
+    const result=db.checkLogin(userid,password);
+    result.then(data =>{
+        return response.json({ result: data })
+    }
+    )
+    .catch(error=>console.log(error));
+});
+
 //---------------------------------------------------------------------------
 //----------------------Department config------------------------------------
 //---------------------------------------------------------------------------
