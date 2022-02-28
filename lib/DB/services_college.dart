@@ -9,7 +9,7 @@ class Services
   static const ADD ='https://studentappprototype.azurewebsites.net/insert';
   static const UPDATE ='https://studentappprototype.azurewebsites.net/update';
   static const DELETE ='https://studentappprototype.azurewebsites.net/delete';
-  static const LOGIN ='https://studentappprototype.azurewebsites.net/login';
+  static const LOGIN ='https://studentappprototype.azurewebsites.net/root/login';
 
   static const _CREATE_TABLE_ACTION ='CREATE_TABLE';
   static const _GET_ALL_ACTION ='GET_ALL';
