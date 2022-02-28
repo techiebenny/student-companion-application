@@ -1,16 +1,27 @@
-# student_app
+# Root Admin Page
 
-application for student and college.
+Live link : 
 
-## Getting Started
+[https://proud-meadow-0f340e010.1.azurestaticapps.net/#/](https://proud-meadow-0f340e010.1.azurestaticapps.net/#/)
 
-This project is a starting point for a Flutter application.
+> Username : root@gmail.com
 
-A few resources to get you started if this is your first Flutter project:
+> Password : root
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## What the root admin page is about? 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Allows administrators to create, update and delete college ids. The administrators have their own login id and credentials. The administrators have the option to create a new college branch in the college list with college details including name, about, college admin and an optional image. These details will be used for the respective college login.
+
+Frontend : Dart with Flutter framework (Allows cross platform publishing of code to web and mobile)
+
+## Features
+
+- Allows for centralised database of colleges under one administrator.
+- Easy to create and modify college details.
+
+
+
+----
+
+For help with Flutter, 
+[online documentation](https://flutter.dev/docs),  full API reference.
