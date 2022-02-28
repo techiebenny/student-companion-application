@@ -25,7 +25,8 @@ jobs:
         run: |
           flutter config --enable-web
           flutter pub get
-          flutter build web --release              - name: Build And Deploy
+          flutter build web --release             
+      - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
