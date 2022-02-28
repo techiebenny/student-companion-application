@@ -22,7 +22,8 @@ bool obscure = true;
 class _LogInPageState extends State<LogInPage> {
   TextEditingController _signin_username = new TextEditingController();
   TextEditingController _signin_password = new TextEditingController();
-  final snackbarIncorrectCredentials = new SnackBar(content: Text("enter valid credentials"));
+  final snackbarIncorrectCredentials =
+      new SnackBar(content: Text("enter valid credentials"));
 
   GlobalKey<FormState> _signinFormKey = GlobalKey<FormState>();
 
@@ -33,10 +34,6 @@ class _LogInPageState extends State<LogInPage> {
       return false;
     }
   }
-
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -118,13 +115,13 @@ class _LogInPageState extends State<LogInPage> {
                           ),
                           SizedBox(height: 0.5.h),
                           TextFormField(
-                            controller: _signin_username,
+                              controller: _signin_username,
                               validator: (value) {
                                 if (value!.isEmpty) {
                                   return "This is a Required Field";
                                 } else {
                                   bool emailValid = RegExp(
-                                      r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$")
+                                          r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$")
                                       .hasMatch(value);
                                   if (!emailValid) {
                                     return "Enter a valid email";
@@ -209,24 +206,26 @@ class _LogInPageState extends State<LogInPage> {
                               onPressed: () {
                                 {
                                   if (validateSignupForm()) {
-                                    Services.checkLogin(_signin_username.text,_signin_password.text).then((result){
+                                    Services.checkLogin(_signin_username.text,
+                                            _signin_password.text)
+                                        .then((result) {
                                       print(result);
 
-                                      if(result=="-1" || result=="-2" || result=="-3"){
-                                        ScaffoldMessenger.of(context).showSnackBar(snackbarIncorrectCredentials);
-                                      }
-                                      else{
+                                      if (result == "-1" ||
+                                          result == "-2" ||
+                                          result == "-3") {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                                snackbarIncorrectCredentials);
+                                      } else {
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                                builder: (context) => MainScreen()));
+                                                builder: (context) =>
+                                                    MainScreen()));
                                       }
                                     });
-
-
-
                                   }
-
                                 }
                               },
                               child: Center(
@@ -248,28 +247,13 @@ class _LogInPageState extends State<LogInPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Forgot Password? ",
-                            style: TextStyle(fontSize: 1.9.h)),
-                        GestureDetector(
-                          child: Text("Get help logging in",
-                              style: TextStyle(
-                                  fontSize: 1.9.h,
-                                  color: Theme.of(context).focusColor,
-                                  decoration: TextDecoration.underline)),
-                          onTap: () {
-                            print('Navigate to Forgot Password');
-                            /*
-                            setState(() {
-                              Navigator.pop(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SignUpPage()));
-                            });
-                              */
-                          },
-                        ),
+                        Text(
+                            "For prototype testing\nEmail Address: abcd@gmail.com\nPassword: password",
+                            style:
+                                TextStyle(fontSize: 1.9.h, color: Colors.grey)),
                       ],
                     ),
+
                     SizedBox(height: 25.h),
                     Container(
                       height: 5.h,
@@ -296,10 +280,10 @@ class _LogInPageState extends State<LogInPage> {
                             onTap: () {
                               setState(() {
                                 print('Navigate to Sign Up');
-                                Navigator.pop(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => BasicInfo()));
+                                //Navigator.pop(
+                                //    context,
+                                //    MaterialPageRoute(
+                                //        builder: (context) => BasicInfo()));
                               });
                             },
                           ),
