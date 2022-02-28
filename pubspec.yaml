@@ -59,14 +59,14 @@ flutter:
   fonts:
     - family: Roboto
       fonts:
-        - asset: assets\Roboto-Regular.ttf
+        - asset: assets/Roboto-Regular.ttf
     - family: Raleway
       fonts:
-        - asset: assets\RALEWAY-VARIABLEFONT_WGHT.TTF
+        - asset: assets/RALEWAY-VARIABLEFONT_WGHT.TTF
 
     - family: Inter
       fonts:
-        - asset: assets\Inter-Medium.ttf
+        - asset: assets/Inter-Medium.ttf
 
 
   # The following line ensures that the Material Icons font is
