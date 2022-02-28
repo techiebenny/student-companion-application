@@ -175,12 +175,12 @@ class _RootLoginFormState extends State<RootLoginForm> {
                       children: [
                         Container(
                             child: MouseRegion(
-                                cursor: SystemMouseCursors.click,
+                                cursor: SystemMouseCursors.text,
                                 child: GestureDetector(
                                     onTap: () {
-                                      print("Click on Forgot Password");
+                                      print("Click on credentials");
                                     },
-                                    child: Text("Forgot Password?",
+                                    child: Text("Testing Credentials \n Email : root@gmail.com \n Password : root",
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontSize: s.height * 0.015,
