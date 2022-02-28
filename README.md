@@ -1,4 +1,22 @@
 # College & Department Portal
+
+Live link 
+
+https://agreeable-pond-059f0e210.1.azurestaticapps.net/#/
+
+*College Login* 
+
+```
+> Username : rit@gmail.com
+> Password : rit
+```
+
+*Department Login*
+```
+> Username :  iseadmin@gmail.com
+> Password : password
+```
+
 Allows college and department officials to login into their entities, to create and assign departments and their respective classrooms that students can enroll in, this also allows them to have an official channel of communication via the annoucements page that is accessible either to all students of a particular college or to only their concerned departments for general purpose communication.
 
 ## Deploy Instructions - Check Main README.md
