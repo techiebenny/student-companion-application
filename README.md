@@ -3,6 +3,15 @@ Allows students to login into their particular classrooms, to check up on their 
 
 ! This branch is hosting the website version of what is supposed to be a mobile app, few sizing issues are to be expected as responsive layouts are different 
 
+Live link : https://orange-bay-073982310.1.azurestaticapps.net
+
+```
+> Username : abcd@gmail.com
+> Password : password
+```
+
+
+
 ## Deploy Instructions - Check Main README.md
  Frontend : Dart with Flutter framework (Allows cross platform publishing of code to web and mobile)
  
