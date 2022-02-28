@@ -1,8 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:college_dept_portals/CollegeDashboard/CollegeDashboard.dart';
-import 'package:college_dept_portals/DbServices/services_college.dart'as clg_service;
-import 'package:college_dept_portals/DbServices/services_db.dart' as dept_service;
+import 'package:college_dept_portals/DbServices/services_college.dart'
+    as clg_service;
+import 'package:college_dept_portals/DbServices/services_db.dart'
+    as dept_service;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'DepartmentDashboard/DepartmentDashboard.dart';
@@ -76,7 +78,8 @@ class _ColDeptSelectionScreenState extends State<ColDeptSelectionScreen>
   Widget collegeLogin(Size size) {
     TextEditingController _signin_email = new TextEditingController();
     TextEditingController _signin_password = new TextEditingController();
-    final snackbarIncorrectCredentials = new SnackBar(content: Text("enter valid credentials"));
+    final snackbarIncorrectCredentials =
+        new SnackBar(content: Text("enter valid credentials"));
 
     GlobalKey<FormState> _signinFormKey = GlobalKey<FormState>();
 
@@ -87,7 +90,6 @@ class _ColDeptSelectionScreenState extends State<ColDeptSelectionScreen>
         return false;
       }
     }
-
 
     return Stack(
       children: [
@@ -256,14 +258,15 @@ class _ColDeptSelectionScreenState extends State<ColDeptSelectionScreen>
                           children: [
                             Container(
                                 child: MouseRegion(
-                                    cursor: SystemMouseCursors.click,
+                                    cursor: SystemMouseCursors.text,
                                     child: GestureDetector(
                                         onTap: () {
                                           print("Click on Forgot Password");
                                         },
-                                        child: Text("Forgot Password?",
+                                        child: Text(
+                                            "For Prototype Testing\nUsername : rit@gmail.com\nPassword : rit",
                                             style: TextStyle(
-                                                color: Colors.black,
+                                                color: Colors.grey,
                                                 fontSize: size.height * 0.015,
                                                 fontWeight: FontWeight.normal,
                                                 decoration:
@@ -281,35 +284,39 @@ class _ColDeptSelectionScreenState extends State<ColDeptSelectionScreen>
                                 //           builder: (context) =>
                                 //               CollegeDashboard()));
                                 // },
-                                onPressed:()async
+                                onPressed: () async
                                     //TODO: password check(done)
-                                {
-                                  SharedPreferences prefs = await SharedPreferences.getInstance();
-                                      if(validateSigninForm())
-                                  {
-                                    clg_service.Services.checkLogin(_signin_email.text,_signin_password.text).then((result){
+                                    {
+                                  SharedPreferences prefs =
+                                      await SharedPreferences.getInstance();
+                                  if (validateSigninForm()) {
+                                    clg_service.Services.checkLogin(
+                                            _signin_email.text,
+                                            _signin_password.text)
+                                        .then((result) {
                                       print(result);
-                                      if(result>0)
-                                      {
-                                          prefs.setString("collegeemail",_signin_email.text);
-                                          prefs.setBool("collegesignedin", true);
-                                          prefs.setInt("collegelink",result);
-                                          Navigator.of(context).pop();
+                                      if (result > 0) {
+                                        prefs.setString(
+                                            "collegeemail", _signin_email.text);
+                                        prefs.setBool("collegesignedin", true);
+                                        prefs.setInt("collegelink", result);
+                                        Navigator.of(context).pop();
 
-                                          Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                              builder: (context)=>CollegeDashboard(),
-                                            ),
-                                            );
-                                            //Navigator.of(context).pushNamed("/home");
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                CollegeDashboard(),
+                                          ),
+                                        );
+                                        //Navigator.of(context).pushNamed("/home");
+                                      } else {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                                snackbarIncorrectCredentials);
                                       }
-                                      else
-                                      {
-                                            ScaffoldMessenger.of(context).showSnackBar(snackbarIncorrectCredentials);
-                                      }
-                                      });
-                                   }
-                                      },
+                                    });
+                                  }
+                                },
                                 style: ElevatedButton.styleFrom(
                                     primary: Colors.green[400]),
                                 child: Text(
@@ -337,7 +344,8 @@ class _ColDeptSelectionScreenState extends State<ColDeptSelectionScreen>
   Widget departmentLogin(Size size) {
     TextEditingController _signin_email = new TextEditingController();
     TextEditingController _signin_password = new TextEditingController();
-    final snackbarIncorrectCredentials = new SnackBar(content: Text("enter valid credentials"));
+    final snackbarIncorrectCredentials =
+        new SnackBar(content: Text("enter valid credentials"));
 
     GlobalKey<FormState> _signinFormKey = GlobalKey<FormState>();
 
@@ -519,9 +527,10 @@ class _ColDeptSelectionScreenState extends State<ColDeptSelectionScreen>
                                         onTap: () {
                                           print("Click on Forgot Password");
                                         },
-                                        child: Text("Forgot Password?",
+                                        child: Text(
+                                            "For Prototype Testing\nUsername :  iseadmin@gmail.com\nPassword : password",
                                             style: TextStyle(
-                                                color: Colors.black,
+                                                color: Colors.grey,
                                                 fontSize: size.height * 0.015,
                                                 fontWeight: FontWeight.normal,
                                                 decoration:
@@ -538,28 +547,31 @@ class _ColDeptSelectionScreenState extends State<ColDeptSelectionScreen>
                                 //             ),
                                 //             );
                                 // },
-                                onPressed:()async
-                                    {
-                                  SharedPreferences prefs = await SharedPreferences.getInstance();
-                                  if(validateSigninForm())
-                                  {
-                                    dept_service.Services.checkLogin(_signin_email.text,_signin_password.text).then((result){
-                                      if(result>0)
-                                      {
-                                        prefs.setString("deptemail",_signin_email.text);
+                                onPressed: () async {
+                                  SharedPreferences prefs =
+                                      await SharedPreferences.getInstance();
+                                  if (validateSigninForm()) {
+                                    dept_service.Services.checkLogin(
+                                            _signin_email.text,
+                                            _signin_password.text)
+                                        .then((result) {
+                                      if (result > 0) {
+                                        prefs.setString(
+                                            "deptemail", _signin_email.text);
                                         prefs.setBool("deptsignedin", true);
-                                        prefs.setInt("departmentlink",result);
+                                        prefs.setInt("departmentlink", result);
                                         Navigator.of(context).pop();
                                         Navigator.of(context).push(
                                           MaterialPageRoute(
-                                            builder: (context)=>DepartmentDashboard(),
+                                            builder: (context) =>
+                                                DepartmentDashboard(),
                                           ),
                                         );
                                         //Navigator.of(context).pushNamed("/home");
-                                      }
-                                      else
-                                      {
-                                        ScaffoldMessenger.of(context).showSnackBar(snackbarIncorrectCredentials);
+                                      } else {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                                snackbarIncorrectCredentials);
                                       }
                                     });
                                   }
