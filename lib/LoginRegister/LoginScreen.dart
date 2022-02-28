@@ -32,14 +32,17 @@ class _LoginScreenState extends State<LoginScreen>
                   //    alignment: Alignment.topCenter),
                   color: Colors.lightBlue[100]),
               child: SafeArea(
-                top: true,
+                top: false,
                 child: Container(
                     height: 100.h,
                     width: 100.w,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(child: Image.asset("assets/BG1.gif")),
+                        Container(
+                            constraints:
+                                BoxConstraints(maxHeight: 500, maxWidth: 500),
+                            child: Image.asset("assets/BG1.gif")),
                         Column(
                           children: [
                             Container(
@@ -53,17 +56,6 @@ class _LoginScreenState extends State<LoginScreen>
                                     color: Colors.black),
                               ),
                             ),
-                            Container(
-                              padding: EdgeInsets.only(bottom: 3.h),
-                              margin: EdgeInsets.symmetric(horizontal: 5.w),
-                              child: Text(
-                                "Description/ This app helps you to...",
-                                style: TextStyle(
-                                    fontFamily: 'Inter',
-                                    fontSize: 3.h,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ),
                           ],
                         ),
                         Container(
@@ -75,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen>
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => BasicInfo()));
+                                      builder: (context) => LogInPage()));
                             },
                             icon: Icon(
                               Icons.navigate_next_rounded,
@@ -94,24 +86,27 @@ class _LoginScreenState extends State<LoginScreen>
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Already a user of the app? ",
+                              Text("Not a user of the app? ",
                                   style: TextStyle(fontSize: 1.9.h)),
                               GestureDetector(
-                                child: Text("Log In",
+                                child: Text("Sign Up",
                                     style: TextStyle(
                                         fontSize: 1.9.h,
                                         color: Theme.of(context).focusColor,
                                         decoration: TextDecoration.underline)),
                                 onTap: () {
                                   setState(() {
-                                    print('Navigate to Log In');
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => LogInPage()));
+                                    print('Navigate to SignUp');
+                                    //Navigator.push(
+                                    //    context,
+                                    //    MaterialPageRoute(
+                                    //        builder: (context) => BasicInfo()));
                                   });
                                 },
                               ),
+                              Text(" (work in progress)",
+                                  style: TextStyle(
+                                      fontSize: 1.5.h, color: Colors.grey)),
                             ],
                           ),
                         ),
